@@ -66,7 +66,7 @@ public class AuthorController {
     }
 
     @DeleteMapping(path = "/{authorId}")
-    public ResponseEntity removeAuthor(@PathVariable("authorId") Long authorId) {
+    public ResponseEntity removeAuthor(@PathVariable Long authorId) {
         if (authorService.isAuthorNonExist(authorId)) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
