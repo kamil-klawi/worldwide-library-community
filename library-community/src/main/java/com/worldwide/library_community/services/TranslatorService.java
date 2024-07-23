@@ -1,6 +1,5 @@
 package com.worldwide.library_community.services;
 
-import com.worldwide.library_community.domain.dtos.AuthorDto;
 import com.worldwide.library_community.domain.dtos.TranslatorDto;
 import org.springframework.data.domain.Page;
 
