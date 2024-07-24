@@ -1,7 +1,9 @@
 package com.worldwide.library_community.services.impl;
 
 import com.worldwide.library_community.domain.dtos.TranslatorDto;
+import com.worldwide.library_community.domain.dtos.TranslatorExtendedDto;
 import com.worldwide.library_community.domain.entities.Translator;
+import com.worldwide.library_community.mappers.impl.TranslatorExtendedMapper;
 import com.worldwide.library_community.mappers.impl.TranslatorMapper;
 import com.worldwide.library_community.repositories.TranslatorRepository;
 import com.worldwide.library_community.services.TranslatorService;
@@ -19,7 +21,15 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class TranslatorServiceImpl implements TranslatorService {
     private final TranslatorRepository translatorRepository;
+    private final TranslatorExtendedMapper translatorExtendedMapper;
     private final TranslatorMapper translatorMapper;
+
+    @Override
+    public Page<TranslatorExtendedDto> findAllExtendedTranslators(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Translator> translators = translatorRepository.findAll(pageable);
+        return translators.map(translatorExtendedMapper::mapEntityToDto);
+    }
 
     @Override
     public Page<TranslatorDto> findAllTranslators(int page, int size) {

@@ -1,6 +1,7 @@
 package com.worldwide.library_community.controllers;
 
 import com.worldwide.library_community.domain.dtos.TranslatorDto;
+import com.worldwide.library_community.domain.dtos.TranslatorExtendedDto;
 import com.worldwide.library_community.services.impl.TranslatorServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TranslatorController {
     private final TranslatorServiceImpl translatorService;
+
+    @GetMapping("/all/details")
+    public ResponseEntity<Page<TranslatorExtendedDto>> findAllExtendedTranslators(
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "size", defaultValue = "4") int size
+    ) {
+        return ResponseEntity.ok(translatorService.findAllExtendedTranslators(page, size));
+    }
 
     @GetMapping("/all")
     public ResponseEntity<Page<TranslatorDto>> findAllTranslators(
