@@ -1,6 +1,7 @@
 package com.worldwide.library_community.controllers;
 
 import com.worldwide.library_community.domain.dtos.AuthorDto;
+import com.worldwide.library_community.domain.dtos.AuthorExtendedDto;
 import com.worldwide.library_community.services.impl.AuthorServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AuthorController {
     private final AuthorServiceImpl authorService;
+
+    @GetMapping("/all/details")
+    public ResponseEntity<Page<AuthorExtendedDto>> findAllExtendedAuthors(
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "size", defaultValue = "4") int size
+    ) {
+        return ResponseEntity.ok(authorService.findAllExtendedAuthors(page, size));
+    }
 
     @GetMapping("/all")
     public ResponseEntity<Page<AuthorDto>> findAllAuthors(

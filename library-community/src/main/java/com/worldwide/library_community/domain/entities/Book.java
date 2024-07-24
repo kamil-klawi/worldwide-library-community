@@ -42,10 +42,10 @@ public class Book {
     private Double width;
     @Column(name = "depth", nullable = false)
     private Double depth;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     private Author author;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "translator_id")
     private Translator translator;
 }

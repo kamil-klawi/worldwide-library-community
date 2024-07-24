@@ -23,6 +23,6 @@ public class Author {
     private String secondName;
     @Column(name = "lastName", nullable = false)
     private String lastName;
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author", fetch = FetchType.LAZY)
     private List<Book> books;
 }

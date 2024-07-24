@@ -1,8 +1,10 @@
 package com.worldwide.library_community.services.impl;
 
 import com.worldwide.library_community.domain.dtos.AuthorDto;
+import com.worldwide.library_community.domain.dtos.AuthorExtendedDto;
 import com.worldwide.library_community.domain.entities.Author;
-import com.worldwide.library_community.mappers.Mapper;
+import com.worldwide.library_community.mappers.impl.AuthorExtendedMapper;
+import com.worldwide.library_community.mappers.impl.AuthorMapper;
 import com.worldwide.library_community.repositories.AuthorRepository;
 import com.worldwide.library_community.services.AuthorService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +21,15 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AuthorServiceImpl implements AuthorService {
     private final AuthorRepository authorRepository;
-    private final Mapper<Author, AuthorDto> authorMapper;
+    private final AuthorExtendedMapper authorExtendedMapper;
+    private final AuthorMapper authorMapper;
+
+    @Override
+    public Page<AuthorExtendedDto> findAllExtendedAuthors(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Author> authors = authorRepository.findAll(pageable);
+        return authors.map(authorExtendedMapper::mapEntityToDto);
+    }
 
     @Override
     public Page<AuthorDto> findAllAuthors(int page, int size) {

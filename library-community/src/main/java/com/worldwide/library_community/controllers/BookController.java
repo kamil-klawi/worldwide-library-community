@@ -70,7 +70,7 @@ public class BookController {
     }
 
     @PatchMapping(path = "/{bookId}")
-    public ResponseEntity<BookDto> partialUpdateAuthor(
+    public ResponseEntity<BookDto> partialUpdateBook(
             @PathVariable Long bookId,
             @RequestBody BookDto bookDto
     ) {
@@ -81,7 +81,7 @@ public class BookController {
     }
 
     @DeleteMapping(path = "/{bookId}")
-    public ResponseEntity removeAuthor(@PathVariable Long bookId) {
+    public ResponseEntity removeBook(@PathVariable Long bookId) {
         if (bookService.isBookNonExist(bookId)) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

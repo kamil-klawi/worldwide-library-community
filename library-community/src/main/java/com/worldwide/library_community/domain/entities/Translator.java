@@ -23,6 +23,6 @@ public class Translator {
     private String secondName;
     @Column(name = "lastName", nullable = false)
     private String lastName;
-    @OneToMany(mappedBy = "translator")
+    @OneToMany(mappedBy = "translator", fetch = FetchType.LAZY)
     private List<Book> books;
 }

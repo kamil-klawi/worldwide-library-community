@@ -1,12 +1,14 @@
 package com.worldwide.library_community.services;
 
 import com.worldwide.library_community.domain.dtos.AuthorDto;
+import com.worldwide.library_community.domain.dtos.AuthorExtendedDto;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface AuthorService {
+    Page<AuthorExtendedDto> findAllExtendedAuthors(int page, int size);
     Page<AuthorDto> findAllAuthors(int page, int size);
     Optional<AuthorDto> findAuthorById(Long id);
     List<AuthorDto> findAuthorsByName(String firstName);
