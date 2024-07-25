@@ -1,0 +1,32 @@
+.error {
+    @apply w-full top-1/2 left-1/2 absolute mx-auto grid grid-cols-2 bg-zinc-200 rounded-2xl min-[560px]:w-3/4 min-[1600px]:w-3/5 max-[960px]:grid-cols-1;
+    transform: translate(-50%, -50%);
+
+    .error__image {
+        @apply w-3/4 mx-auto mt-8 mb-8 max-[960px]:mb-2;
+    }
+
+    .error__content {
+        @apply mx-8 my-8 flex flex-col justify-center;
+
+        .error__header {
+            @apply mb-4 font-geist text-zinc-700 text-3xl font-normal tracking-wide;
+        }
+
+        .error__description {
+            @apply mb-8 font-geist text-zinc-700  text-base font-normal tracking-wide;
+        }
+
+        .error__groupOfLinks {
+            @apply grid grid-cols-3 items-center max-[420px]:grid-cols-1 max-[640px]:grid-cols-2 min-[960px]:grid-cols-2 min-[1280px]:grid-cols-3;
+            
+            .error__link {
+                @apply w-fit h-fit mb-4 font-geist text-zinc-700 text-base font-normal tracking-wide text-nowrap;
+            }
+    
+            .error__link_primary {
+                @apply px-3 py-1 text-zinc-100 bg-zinc-400 rounded;
+            }
+        }
+    }
+}
