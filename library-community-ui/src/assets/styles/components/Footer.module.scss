@@ -1,0 +1,27 @@
+.footer {
+    @apply w-full h-fit py-4 px-4 grid grid-cols-1 bg-zinc-300 min-[768px]:grid-cols-2;
+
+    .footer__copyright {
+        @apply font-geist text-zinc-700  text-base font-normal tracking-wide;
+    }
+
+    .footer__menu {
+        @apply grid grid-cols-2 max-[768px]:mt-4;
+
+        .footer__navigation {
+            @apply w-fit min-[960px]:mx-auto;
+    
+            .footer__list {
+                @apply w-fit flex flex-col;
+    
+                .footer__item {
+                    @apply px-4 first-letter:uppercase;
+    
+                    .footer__link {
+                        @apply font-geist text-zinc-700  text-base font-normal tracking-wide hover:text-zinc-400 transition-all;
+                    }
+                }
+            }
+        }
+    }
+}
