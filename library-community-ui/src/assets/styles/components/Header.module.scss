@@ -1,0 +1,23 @@
+.header {
+    @apply w-full h-fit py-3 grid grid-cols-2 bg-zinc-300 min-[1280px]:grid-cols-3;
+
+    .header__logo {
+        @apply w-fit font-geist text-zinc-700  text-3xl font-normal tracking-wide min-[1280px]:m-auto max-[768px]:mx-4 max-[1280px]:mx-8;
+    }
+
+    .header__navigation {
+        @apply w-fit m-auto hidden min-[1280px]:block;
+
+        .header__list {
+            @apply w-fit flex items-center justify-center;
+
+            .header__item {
+                @apply px-4 first-letter:uppercase;
+
+                .header__link {
+                    @apply font-geist text-zinc-700  text-base font-normal tracking-wide text-nowrap hover:text-zinc-400 transition-all;
+                }
+            }
+        }
+    }
+}
