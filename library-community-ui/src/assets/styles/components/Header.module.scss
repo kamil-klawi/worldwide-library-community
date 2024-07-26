@@ -6,7 +6,11 @@
     }
 
     .header__navigation {
-        @apply w-fit m-auto hidden min-[1280px]:block;
+        @apply w-fit m-auto hidden min-[1280px]:flex min-[1280px]:items-center min-[1280px]:justify-center;
+
+        .header__logout {
+            @apply font-geist text-zinc-700  text-base font-normal tracking-wide text-nowrap hover:text-zinc-400 transition-all;
+        }
 
         .header__list {
             @apply w-fit flex items-center justify-center;

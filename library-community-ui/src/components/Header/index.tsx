@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MenuList } from '../MenuList';
 import styles from '../../assets/styles/components/Header.module.scss';
 
@@ -52,7 +52,14 @@ const profileLinks = [
 ];
 
 function Header() {
-    const user = null;
+    const token = localStorage.getItem('token' || undefined);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/login');
+        navigate(0);
+    };
 
     return (
         <>
@@ -72,11 +79,22 @@ function Header() {
                 <nav className={styles.header__navigation}>
                     <MenuList
                         key="wlc__header__profile__list"
-                        arrayList={user != null ? profileLinks : loginLinks}
+                        arrayList={
+                            token != undefined ? profileLinks : loginLinks
+                        }
                         classNameItem={styles.header__item}
                         classNameLink={styles.header__link}
                         classNameList={styles.header__list}
                     />
+                    {token && (
+                        <button
+                            className={styles.header__logout}
+                            onClick={handleLogout}
+                            type="button"
+                        >
+                            Wyloguj się
+                        </button>
+                    )}
                 </nav>
             </header>
         </>
