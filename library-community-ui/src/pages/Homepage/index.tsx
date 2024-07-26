@@ -1,7 +1,8 @@
 function Homepage() {
+    const token = localStorage.getItem('token');
     return (
         <div>
-            <div>Homepage</div>
+            <div>{token}</div>
         </div>
     );
 }
