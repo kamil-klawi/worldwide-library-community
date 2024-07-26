@@ -1,0 +1,35 @@
+.form {
+    @apply w-2/5 p-8 mx-auto rounded-xl bg-zinc-400;
+
+    .form__header {
+        @apply font-geist text-zinc-700 text-3xl font-normal tracking-wide;
+    }
+
+    .form__breadcumb {
+        @apply mt-2 mb-8 font-geist text-zinc-700 text-base font-normal tracking-wide;
+    }
+
+    form {
+        @apply flex flex-col;
+
+        .form__divide {
+            @apply my-12 w-full h-1 bg-transparent;
+        }
+
+        .form__label {
+            @apply my-3 font-geist text-zinc-700 text-base font-normal tracking-wide;
+        }
+
+        .form__input {
+            @apply w-full h-10 px-2 rounded font-geist text-zinc-700 text-base font-normal tracking-wide outline-none;
+        }
+
+        .form__button {
+            @apply py-3 mt-2 font-geist text-zinc-700 text-center text-base font-normal tracking-wide;
+        }
+
+        .form__button_primary {
+            @apply bg-zinc-500
+        }
+    }
+}
