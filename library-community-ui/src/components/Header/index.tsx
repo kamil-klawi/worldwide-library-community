@@ -12,12 +12,12 @@ const menuLinks = [
         uri: '/books',
     },
     {
-        name: 'audiobooki',
-        uri: '/audiobooks',
+        name: 'autorzy',
+        uri: '/authors',
     },
     {
-        name: 'księgarnie',
-        uri: '/bookstores',
+        name: 'tłumacze',
+        uri: '/translators',
     },
     {
         name: 'blog',
