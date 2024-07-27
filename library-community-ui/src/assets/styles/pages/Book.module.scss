@@ -1,0 +1,11 @@
+.wrapper {
+    @apply w-[90dvw] h-fit mx-auto;
+
+    .wrapper__flex {
+        @apply mb-4 flex flex-row items-center justify-between;
+
+        .wrapper__header {
+            @apply font-geist text-zinc-700 text-3xl font-normal tracking-wide;
+        }
+    }
+}
