@@ -1,0 +1,15 @@
+.card {
+    @apply w-full h-fit p-4 grid grid-cols-1 rounded-md bg-zinc-300;
+
+    .card__title {
+        @apply mb-1 font-geist text-zinc-700  text-lg font-normal tracking-wide;
+    }
+
+    .card__author {
+        @apply mb-4 font-geist text-zinc-700  text-sm font-bold tracking-wide;
+    }
+
+    .card__button {
+        @apply w-fit font-geist text-indigo-600  text-sm font-bold tracking-wide;
+    }
+}

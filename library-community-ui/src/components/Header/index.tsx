@@ -12,14 +12,6 @@ const menuLinks = [
         uri: '/books',
     },
     {
-        name: 'autorzy',
-        uri: '/authors',
-    },
-    {
-        name: 'tłumacze',
-        uri: '/translators',
-    },
-    {
         name: 'blog',
         uri: '/blog',
     },
@@ -43,7 +35,7 @@ const profileLinks = [
     },
     {
         name: 'konto',
-        uri: '/account',
+        uri: '/admin',
     },
     {
         name: 'koszyk',

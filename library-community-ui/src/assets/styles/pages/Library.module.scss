@@ -1,0 +1,12 @@
+.wrapper {
+    @apply w-[90dvw] mx-auto grid grid-cols-5;
+
+    .wrapper__filter {
+        grid-column: 1/2;
+    }
+
+    .wrapper__cards {
+        @apply grid grid-cols-6 gap-4;
+        grid-column: 2/6;
+    }
+}

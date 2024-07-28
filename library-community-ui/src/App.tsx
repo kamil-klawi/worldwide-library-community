@@ -8,6 +8,8 @@ import Authors from './pages/Author';
 import Translators from './pages/Translators';
 import Admin from './pages/Admin';
 import AdminLayout from './components/Layouts/admin';
+import Library from './pages/Library';
+import Book from './pages/Library/Book';
 
 function App() {
     return (
@@ -16,6 +18,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Homepage />} />
+                        <Route path="/books" element={<Library />} />
+                        <Route path="/books/:id" element={<Book />} />
                         <Route path="/login" element={<Login />} />
                     </Route>
                     <Route path="/admin" element={<AdminLayout />}>
