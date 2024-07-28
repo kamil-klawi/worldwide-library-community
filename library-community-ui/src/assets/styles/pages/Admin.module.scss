@@ -1,0 +1,23 @@
+.wrapper {
+    @apply w-full grid grid-cols-1;
+
+    .card {
+        @apply w-3/4 h-fit my-16 mx-auto grid grid-cols-2;
+    
+        .card__image {
+            @apply w-3/4 h-fit mx-auto rounded-3xl shadow-xl;
+        }
+    
+        .card__content {
+            @apply w-full my-8;
+    
+            .card__header {
+                @apply mb-8 font-geist text-zinc-700 text-3xl font-normal tracking-wide;
+            }
+    
+            .card__description {
+                @apply mb-4 font-geist text-zinc-700  text-base font-normal tracking-wide;
+            }
+        }
+    }
+}
